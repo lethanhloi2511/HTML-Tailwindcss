@@ -1,0 +1,493 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --primary-color: #e98383;
+        --secondary-color: #efd889;
+        --third-color: #95e1d3;
+
+        --title-color: #333333;
+        --title-text-color: #a6a6a6;
+        --text-color: #999999;
+
+        --bg-logo-color: #f8f8f8;
+        --arrow-color: #cccccc;
+
+        --line-primary: #f38181;
+        --line-secondary: white;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ct = custom */
+/* =========== Menu ==============*/
+.ct-menu-expanded-slideDown {
+    @apply absolute top-[80px] z-50 text-center w-full bg-gray-rgba backdrop-blur-md animate-slideDown;
+}
+
+.ct-menu-item {
+    @apply py-3 font-extralight hover:text-skin-second relative after:lg:absolute after:lg:bottom-[-0.5rem] after:lg:left-0 after:lg:bg-skin-second after:lg:h-1 after:lg:w-0 hover:after:w-full after:lg:transition-all after:lg:ease-in-out after:lg:duration-300;
+}
+
+.ct-menu-item-active {
+    @apply text-skin-second font-semibold;
+}
+
+.ct-badge-circle {
+    @apply text-xs text-center rounded-full px-1.5;
+}
+
+/* =========== Content Header =========== */
+.ct-content-header {
+    -webkit-text-stroke: 1px white;
+    background: url('../public/image/back.png');
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+}
+
+.ct-title-top-header {
+    @apply font-Kaushan font-semibold text-4xl ssm:text-6xl sm:text-6xl md:text-7xl mb-5;
+}
+
+.ct-title-bottom-header {
+    @apply font-Montserrat font-semibold text-5xl ssm:text-6xl sm:text-8xl md:text-[7.5rem];
+}
+
+/* Line red */
+.ct-line-primary {
+    @apply bg-skin-linePrimary w-16 h-1 mx-auto my-14;
+}
+
+/* Line white */
+.ct-line-second {
+    @apply bg-skin-lineSecond w-16 h-1 mx-auto my-14;
+}
+
+/* =========== Content footer header =========== */
+/* Line white footer header */
+.ct-line-footer-header {
+    @apply bg-skin-lineHeaders w-full h-1 sm:mb-10;
+}
+
+.ct-footer-header {
+    @apply w-full h-[80px] mx-auto sm:w-1/4 sm:h-auto sm:p-10;
+}
+
+/* =========== TITLE MAIN ==============*/
+/* title top */
+.ct-title-top {
+    @apply font-Kaushan font-semibold text-skin-title text-5xl;
+}
+
+/* title bottom */
+.ct-title-bottom {
+    @apply font-Montserrat font-semibold uppercase text-skin-title text-5xl;
+}
+
+/* title-text */
+.ct-title-text {
+    @apply font-Roboto text-skin-textColor text-xl m-auto mb-16 w-full sm:w-3/5;
+}
+
+/* =========== NUMBER ==============*/
+.ct-block-number {
+    @apply font-semibold font-Montserrat ssm:flex ssm:flex-col ssm:m-6 m-2;
+}
+
+.ct-line-number {
+    @apply w-full h-1 xl:w-[2px] xl:h-[300px] bg-white;
+}
+
+.ct-number {
+    @apply text-6xl sm:text-8xl lg:text-9xl;
+}
+
+.ct-title-number {
+    @apply text-xl lg:text-2xl uppercase;
+}
+
+/* =========== AMAZING SERVICES ==============*/
+.ct-services-contents {
+    @apply w-full h-auto xl:w-[80%] m-auto flex lg:flex-row justify-between flex-wrap;
+}
+
+.ct-service-box {
+    @apply md:flex md:items-start flex justify-center items-start gap-[30px] mb-8 md:mb-0 m-auto basis-full sm:basis-[80%] md:basis-[45%] lg:basis-[30%];
+}
+
+.ct-box-icon {
+    @apply text-skin-third text-5xl mt-[5px];
+}
+
+.ct-service-both {
+    @apply flex flex-col;
+}
+
+.ct-service-title {
+    @apply font-Montserrat font-semibold text-skin-title text-xl;
+}
+
+.ct-service-description {
+    @apply font-Roboto text-skin-textColor text-[16px];
+}
+
+.ct-line-service {
+    @apply lg:w-full lg:h-[2px] lg:m-auto lg:mt-8 lg:mb-8 bg-[#e5e5e5];
+}
+
+/* =========== UNIQUE DESIGN ==============*/
+.ct-title-top-unique {
+    @apply font-Kaushan font-semibold text-skin-title text-2xl sm:text-5xl;
+}
+
+.ct-title-bottom-unique {
+    @apply font-Montserrat font-semibold uppercase text-skin-title text-3xl sm:text-5xl;
+}
+
+/* =========== Service - WHAT WE DO ==============*/
+.ct-image-service {
+    @apply mr-4 text-skin-third text-2xl ssm:text-3xl md:text-4xl;
+}
+
+.ct-title-service {
+    @apply text-base ssm:text-xl sm:text-2xl;
+}
+
+.ct-button-service.active {
+    @apply text-skin-primary;
+}
+
+.ct-arrow-service {
+    @apply text-base ssm:text-xl sm:text-2xl text-skin-arrow;
+}
+
+/* =========== Slide Text ==============*/
+.ct-slide-text-section {
+    @apply flex basis-full justify-center items-center;
+}
+
+/* =========== Slide Text One ==============*/
+.ct-arrow-slide {
+    @apply text-skin-arrow text-4xl cursor-pointer;
+}
+
+.ct-content-items-slide {
+    @apply flex items-center gap-x-4 sm:gap-x-12 w-[80%];
+}
+
+.ct-image-slide {
+    @apply text-skin-third text-3xl sm:text-5xl md:text-[4rem] border-2 border-[#95e1d3] p-4;
+}
+
+.ct-text-slide {
+    @apply font-Roboto italic text-[15px] sm:text-base md:text-xl lg:text-2xl text-[#a0a0a0];
+}
+
+.ct-line-and-author {
+    @apply flex flex-row items-center gap-4;
+}
+
+.ct-line-slide {
+    @apply bg-skin-linePrimary w-10 sm:w-16 h-1;
+}
+
+.ct-author-slide {
+    @apply font-Kaushan text-skin-title text-[22px] sm:text-3xl md:text-4xl font-semibold;
+}
+
+.ct-btn-arrow {
+    @apply absolute top-1/2 translate-y-[-50%] flex justify-between w-full pr-1 pl-1 ssm:pr-2 ssm:pl-2 md:pr-4 md:pl-4;
+}
+
+.ct-btn-checkbox-slide {
+    @apply absolute bottom-1 ssm:bottom-2 left-1/2 translate-x-[-50%] flex gap-8;
+}
+
+.ct-btn-checkbox-items-slide {
+    @apply w-4 h-4 border-solid bg-[#333] rounded-xl cursor-pointer;
+}
+
+.ct-btn-checkbox-items-slide.active {
+    @apply bg-skin-third;
+}
+/* =========== MEET OUR TEAM ==============*/
+.ct-list-icon {
+    @apply absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] z-20 flex  bg-[#fce38a] border border-solid border-[#f9bd87];
+}
+
+.ct-items-icon {
+    @apply w-[60px] text-base ssm:text-xl lg:text-2xl xl:text-3xl text-skin-primary p-3 border border-solid border-[#f38181];
+}
+
+.ct-author-meet {
+    @apply font-Montserrat text-skin-title uppercase font-semibold text-base mt-2;
+}
+
+.ct-job-meet {
+    @apply font-Roboto italic text-skin-textColor text-xl;
+}
+
+/* =========== SOME OF OUR WORK ==============*/
+/* For Desktop */
+.ct-image-list-work {
+    @apply flex flex-col w-full items-center;
+}
+.ct-image-items-work {
+    @apply w-full sm:w-[70%] h-[300px] mb-12 lg:m-0 lg:w-full lg:h-[390px] bg-cover bg-center;
+}
+
+/* For Laptop and Mobile */
+.ct-image-slider-all {
+    @apply flex w-[700%] h-full duration-1000;
+}
+
+.ct-section-image-slider {
+    @apply flex basis-full justify-center items-center;
+}
+
+.ct-image-div-items {
+    @apply flex items-center w-full sm:w-[80%];
+}
+
+.ct-image-items {
+    @apply w-full h-[300px] sm:h-[390px] object-cover m-auto;
+}
+
+.ct-btn-checkbox-slide-image {
+    @apply absolute bottom-1 ssm:bottom-2 left-1/2 translate-x-[-50%] flex gap-5 ssm:gap-8;
+}
+
+.ct-btn-checkbox-items-slide-image {
+    @apply w-4 h-4 border-2 border-solid bg-white rounded-xl cursor-pointer;
+}
+
+.ct-btn-checkbox-items-slide-image.active {
+    @apply bg-skin-third;
+}
+
+/* =========== Slide Text Two ==============*/
+.ct-rounded-image {
+    @apply w-full h-[200px] sm:w-[210px] sm:h-[210px] mb-2 sm:mb-0 rounded-xl sm:rounded-full object-cover bg-cover;
+}
+
+.ct-content-items-slide-two {
+    @apply block sm:flex items-start sm:items-center gap-x-4 sm:gap-x-12 w-[80%];
+}
+
+.ct-btn-checkbox-slide-two {
+    @apply absolute bottom-1 ssm:bottom-2 left-1/2 translate-x-[-50%] flex gap-8;
+}
+
+.ct-btn-checkbox-items-slide-two {
+    @apply w-4 h-4 border-2 border-solid bg-[#333] rounded-xl cursor-pointer;
+}
+
+.ct-btn-checkbox-items-slide-two.active {
+    @apply bg-skin-third;
+}
+
+/* =========== Happy Clients =========== */
+/* For Desktop */
+.ct-content-happy-total {
+    @apply absolute top-[65%] lg:top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-[95%] md:w-[90%] xl:w-[80%] h-auto hidden sm:flex flex-col gap-5 xl:gap-12;
+}
+
+.ct-content-happy-both {
+    @apply flex flex-col md:flex-row justify-between items-center gap-7;
+}
+
+.ct-content-happy-items {
+    @apply flex basis-[45%] gap-6;
+}
+
+.ct-title-happy {
+    @apply text-center absolute top-4 left-1/2 translate-x-[-50%];
+}
+
+.ct-image-happy {
+    @apply rounded-full object-cover bg-cover h-full;
+}
+
+.ct-author-happy {
+    @apply font-semibold font-Montserrat;
+}
+
+.ct-jobs-happy {
+    @apply italic font-Roboto text-skin-textColor text-base md:text-xl;
+}
+
+.ct-line-happy {
+    @apply bg-skin-linePrimary w-16 h-1 mt-2 mb-2;
+}
+
+.ct-text-happy {
+    @apply font-Roboto text-sm md:text-base text-skin-textColor;
+}
+/* For Mobile */
+.ct-happy-section {
+    @apply basis-full flex flex-col gap-14;
+}
+
+.ct-happy-items {
+    @apply flex w-[95%] m-auto gap-6;
+}
+
+.ct-happy-image-mobile {
+    @apply rounded-full w-[110px] h-[110px];
+}
+
+/* =========== Our stories =========== */
+.ct-stories-section {
+    @apply flex flex-col basis-1/3;
+}
+
+.ct-stories-container {
+    @apply w-full h-auto relative;
+}
+
+.ct-stories-image {
+    @apply w-full h-[240px] bg-cover bg-center lg:bg-top object-cover;
+}
+
+.ct-stories-calendar {
+    @apply flex flex-col items-center absolute top-1/2 left-[-24px] translate-y-[-50%] p-[10px] bg-skin-third text-white;
+}
+
+.ct-stories-calendar-number {
+    @apply text-3xl font-semibold;
+}
+
+.ct-stories-calendar-text {
+    @apply text-base;
+}
+
+.ct-stories-content {
+    @apply flex flex-col gap-2;
+}
+
+.ct-stories-content-title {
+    @apply text-[18px]  font-semibold text-skin-title;
+}
+
+.ct-stories-content-text {
+    @apply text-base text-skin-textColor;
+}
+
+.ct-stories-content-line {
+    @apply w-full h-[1px] bg-[#e5e5e5];
+}
+
+.ct-stories-content-mes {
+    @apply flex gap-4;
+}
+
+.ct-stories-content-icon {
+    @apply text-skin-third;
+}
+
+.ct-stories-content-icon-span {
+    @apply font-Roboto text-skin-textColor;
+}
+
+/* =========== MAP =========== */
+.ct-map-image {
+    @apply object-cover bg-cover opacity-15 bg-[#e7e7e7] h-[120px] smm:h-[150px] lg:h-[200px];
+}
+
+/* =========== Footer =========== */
+.ct-footer-container {
+    @apply w-[95%] h-full m-auto flex flex-col-reverse gap-10 xl:flex-row xl:gap-0 justify-between mt-8 mb-8 sml:mt-12 sml:mb-12;
+}
+
+.ct-footer-title {
+    @apply font-bold text-skin-title leading-10 text-center md:text-left;
+}
+
+/* Left */
+.ct-footer-left {
+    @apply flex flex-col w-full gap-3 xl:w-[35%] xl:gap-0 justify-between;
+}
+
+.ct-footer-left-title {
+    @apply font-Montserrat font-semibold text-4xl text-[#cccccc];
+}
+
+.ct-footer-left-text {
+    @apply font-Roboto text-skin-textColor text-base text-justify;
+}
+
+.ct-footer-left-icons {
+    @apply hover:text-skin-primary cursor-pointer ease-linear duration-300;
+}
+
+.ct-footer-left-inputText {
+    @apply w-2/3 h-full border border-solid border-[#e7e7e7] p-2 text-base ssm:text-xl italic font-semibold outline-none;
+}
+
+.ct-footer-left-button {
+    @apply w-1/3 h-full bg-skin-third p-2 text-base ssm:text-xl font-semibold cursor-pointer text-white hover:text-skin-title ease-linear duration-300;
+}
+
+/* Center */
+.ct-footer-center {
+    @apply flex flex-col w-full md:w-1/2 lg:w-[60%] xl:w-[55%] 2xl:xl:w-[59%] justify-between gap-6 sml:gap-5;
+}
+
+.ct-footer-center-content {
+    @apply flex gap-2 sml:gap-8 items-center flex-col sml:flex-row xl:items-stretch;
+}
+
+.ct-footer-center-image {
+    @apply object-cover bg-cover h-[88px];
+}
+
+.ct-footer-center-both {
+    @apply flex flex-col text-[15px] text-center sml:text-left smm:text-base;
+}
+
+.ct-footer-center-content-title {
+    @apply font-bold text-skin-title hover:text-skin-primary cursor-pointer ease-linear duration-150;
+}
+
+.ct-footer-center-content-date {
+    @apply font-Roboto text-skin-textColor;
+}
+
+/* Right */
+.ct-footer-right {
+    @apply flex flex-col w-full md:w-[270px] gap-5 justify-between;
+}
+
+.ct-footer-show-image {
+    @apply flex flex-wrap justify-normal w-[270px] sml:w-[360px] sm:w-[540px] md:w-full m-auto;
+}
+
+.ct-footer-image {
+    @apply object-cover border border-white cursor-pointer hover:opacity-50 ease-linear duration-300;
+}
+
+/* Button Go To Top */
+.ct-go-to-top {
+    @apply fixed bottom-6 smm:bottom-10 lg:bottom-20 right-16 w-10 h-10 smm:w-12 smm:h-12 rounded-full flex items-center justify-center text-2xl smm:text-4xl bg-skin-primary text-white opacity-0 transition-all ease-linear duration-500;
+}
+
+.ct-go-to-top.active {
+    @apply opacity-100;
+}
